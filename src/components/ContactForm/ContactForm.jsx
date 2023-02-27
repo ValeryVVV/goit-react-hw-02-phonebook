@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import style from './ContactForm.module.css';
+
 class ContactForm extends Component {
     state = {
         name: '',
@@ -14,7 +16,7 @@ class ContactForm extends Component {
       };
 
       handleSubmit = e => {
-        e.prevetnDefault();
+        e.preventDefault();
 
 
         this.props.onSubmit(this.state);
@@ -26,10 +28,11 @@ class ContactForm extends Component {
         const { name, number } = this.state;
         return (
             <>
-            <form onSubmit={this.handleSubmit}>
+            <form className={style.form} onSubmit={this.handleSubmit}>
                 <label>
                     Name
                     <input
+                    className={style.inputName}
                         type="text"
                         name="name"
                         value={name}
