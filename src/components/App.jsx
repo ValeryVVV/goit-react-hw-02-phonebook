@@ -27,12 +27,12 @@ class App extends Component {
 
       }
 
-    addTodo = (name) => {
+    addTodo = ({ name, number }) => {
 
         const todo = {
             id: shortid.generate(),
             name: name,
-            number: '123'
+            number: number
         }
 
         console.log(todo)
